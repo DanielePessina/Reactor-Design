@@ -1,24 +1,189 @@
 \section{Introduction}
 
-dfjdkjf
+The conventional solvay soda ash production process has a large carbon footprint which is around 500kg of carbon dioxide per the tonne of soda ash produced. With the objective to reduce carbon dioxide emission to 30kg per tonne of soda ash, the report aims to design the innovative system of reactors that utilises direct separation reactor (DSR) and operates at a scale of 1Mtonne of soda ash per annum. In this report, a limestone calciner, a key reactor that contributes the most to the carbon footprint, is extensively modelled and studied in detail. The modelling of the reactors is done in gPROMs and Matlab using the mass balance, energy balance and reaction kinetics obtained from the literature(?????). Then the reactor sizing and mechanical designing are done. 
 
 \section{Reactor Overview}
+Solution A Ltd\textquotesingle s modified solvay process involves 4 main processes with 5 reactors in total.  Limestone calcination process involves the limestone DSR calciner, R-1, where the limestone fed and decomposes into carbon dioxide and calcium oxide by the heat supplied by the combustion of natural gas. Sodium bicarbonate production process involves 2 reactors. Calcium oxide from R-1 is first sent to a slaker, R-3, where it reacts with water to produce a basic solution of calcium hydroxide. This solution is mixed with the brine feed and fed to a bubble column, R-4, to produce sodium bicarbonate. The sodium bicarbonate stream is then sent to sodium DSR calciner, R-5, where a thermal decomposition reaction takes place to produce carbon dioxide and the main product, soda ash. The flue gases produced from heating two DSRs are used in a carbon loop where the carbonator, R-2, is present. There carbon dioxide in the flue gas reacts with calcium oxide to produce the limestone stream which is recycled back to the limestone calciner, R-1.
 
-dfdf
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=170mm]{Figures/Process_Overview2 (2).png}
+    \caption{Overview of the Solution A modified Solvay process.}
+    \label{fig:GenOverview}
+    
+\end{figure}
 
-\section{Detailed Design - R-1 Lime Calciner}
+\begin{table}[H]
+\centering
+\caption{Reactions modelled}
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Reaction} & \textbf{Reactor} &\textbf{Unit code} \\ \hline
+$CaCO_3 \rightarrow CaO + CO_2 $ & DSR Calciner &R-1 \\ \hline
+$CaO + CO_2 \rightarrow  CaCO_3 $     & Carbonator  & R-2  \\ \hline
+$CaO + H_2O \rightarrow  Ca(OH)_2$    & Slaker   & R-3   \\ \hline
+$2NaCl + 2CO_2 + Ca(OH)_2 \rightarrow  2NaHCO_3 + CaCl_2$    & Bubble column reactor  & R-4 \\ \hline
+$2NaHCO_3 \rightarrow  Na_2CO_3 + H_2O + CO_2$       & DSR Calciner&  R-5\\ \hline
+\end{tabular}
+\label{tab:reactions}
+\end{table}
 
-dfddf
 
-\section{Mechanical Design - R-1 Lime Calciner}
 
-dfd
+\section{Detailed Design of Reactor}
+\subsection{Choice of detailed reactor}
+As an objective, the solvay process has to be modified to reduce carbon emission by implementation of DSR (Direct Separation Reactor). Unlike the conventional limestone calcination process which uses kiln for the thermal decomposition of limestone, DSR is a newly developed reactor which can capture carbon dioxide very effectively. This is possible since DSR captures pure carbon dioxide released from the limestone by using indirect heating and separation of the exhaust gas from the pure carbon dioxide stream.\\
+With the objective of carbon emission reduction through DSR implementation, the limestone calcination reactor, R-1, is chosen to be designed in details amongst the five reactors for the following reasons. The limestone calcination has the greatest carbon foot print within the whole solvay process meaning it plays a crucial role in achieving the objective and it is the most suitable reactor for DSR to be implemented, designed and explored in details. Furthermore, the modelling of the reactor with solid and gas phases poses challenging mathematical problems where various equations and variables are involved. Solving these system of equations to size the reactor itself is very meaningful. 
 
-\section{Non-detailed Design}
 
-sdsfd
+\subsection{Reaction summary }
 
-\section{Conclusion}
+\begin{center} 
+$CaCO_3 (s) \rightarrow CaO_(s) + CO_2(g) $
+\end{center}
+\noindent A thermal decomposition reaction of limestone, CaCO$_3$, occurs in the reactor, R-1. At the temperature above 840 \textdegree C limestone decomposes to produce solid CaO and CO$_2$ by heat resulting in the production two streams. At the top of the reactor a pure CO$_2$ gas stream is released and at the bottom a solid CaO powder stream is produced. The exhaust gas stream formed by the combustion of fuel is also released separately. There is no side reaction within the reactor, however, sintering of solid which is the fusion of solid particles into one solid mass, may occur. The detailed reaction kinetics and mechanism of the reaction are in the section ???.
+
+\subsection{Reactor configuration}
+In industry, various types of calcination kilns such as shaft kiln, rotary kiln, the cyclone and the fluidised bed are being used with different mode of operation and vessel shapes \cite{https://www.sciencedirect.com/science/article/pii/S0038092X19312435}. For the configuration of limestone calcination DSR, various factors such as cost, safety, and performance were considered.\\
+ \noindent After the comparison of batch and continuous modes of operation, the latter was chosen as it has higher productivity due to absence of breaks in time, good quality control and lower costs by reduced inventory and transport cost. Furthermore, the conventional kiln operates continuously, hence, it is reasonable for DSR to operates similarly.\\
+ \noindent The reaction in DSR is a simple thermal decomposition without any need of catalyst, hence, an empty tubular vessel was chosen for the DSR as internal components are not needed. The tubular vessel for DSR should contain two compartments. The first compartment is the inner tube of DSR where the calcination of limestone takes place. The other compartment is the outer tube which surrounds the inner tube and the combustion of fuel takes place in it to produce indirect heating for the thermal decomposition of limestone in the first compartment. Due to this structure characteristic, it is possible to capture pure carbon dioxide stream from limestone without mixing it with the exhaust gas eventually reducing the total carbon emission.
+ 
+ 
+
+\subsection{Modelling objectives }
+
+
+
+\subsection{Modelling approach}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Reactor model}
+
+
+
+
+\subsubsection{Mass balance}
+
+
+
+\subsubsection{Energy balance}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Kinetic estimation }
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Parameter estimation }
+
+
+
+\subsubsection{Axial dispersion coefficient}
+
+
+\subsubsection{Voidage }
+
+
+\subsubsection{Gas equilibrium }
+
+
+\subsubsection{Heat capacity }
+
+
+\subsubsection{Heat of reactions}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Model Implementation in gPROMs}
+
+
+\subsubsection{Boundary conditions}
+
+
+\subsubsection{Constraints}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Model results and discussion}
+
+
+\subsubsection{Summary of results}
+
+
+\subsubsection{Reactor height and aspect ratio}
+
+
+\subsubsection{Composition profile}
+
+
+\subsubsection{Heating profile}
+
+
+\subsubsection{Amount of natural gas burnt}
+
+
+\subsubsection{Conversion}
+
+
+\subsubsection{Superficial gas and solid velocity}
+
+
+\subsubsection{Pressure profile}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Model justification and sensitivity analysis}
+
+
+\subsubsection{Justification of model choice}
+
+
+\subsubsection{Effects of dispersion}
+
+
+\subsubsection{Heating profile}
+
+
+\subsubsection{Effect of aspect ratio}
+
+
+\subsubsection{Reaction constant}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Detailed Mechanical Design}
+
+
+
+\subsection{Design rationale}
+
+
+\subsection{Reactor material}
+
+
+\subsection{Reactor dimension}
+
+
+\subsection{Port and flanges}
+
+
+
+\subsection{Heating tube}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Design of Non-detailed reactors}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{Conclusion and future works}
 
 dkfjdjf
 
