@@ -1,6 +1,7 @@
 \section{Introduction}
 
-The conventional solvay soda ash production process has a large carbon footprint which is around 500kg of carbon dioxide per the tonne of soda ash produced. With the objective to reduce carbon dioxide emission to 30kg per tonne of soda ash, the report aims to design the innovative system of reactors that utilises direct separation reactor (DSR) and operates at a scale of 1Mtonne of soda ash per annum. In this report, a limestone calciner, a key reactor that contributes the most to the carbon footprint, is extensively modelled and studied in detail. The modelling of the reactors is done in gPROMs and Matlab using the mass balance, energy balance and reaction kinetics obtained from the literature(?????). Then the reactor sizing and mechanical designing are done. 
+The conventional Solvay soda ash production process has a large carbon footprint which is around 500 kg of carbon dioxide per the tonne of soda ash produced. With the objective to reduce carbon dioxide emission to 30 kg per tonne of soda ash, the report aims to design the innovative system of reactors that utilises direct separation reactor (DSR) and operates at a scale of 1 Mtonnes of soda ash per annum. In this report, a limestone calciner, a key reactor that contributes the most to the carbon footprint, is extensively modelled and studied in detail. The modelling of the reactors is done in gPROMs and Matlab using the mass balance, energy balance and reaction kinetics obtained from the literature(?????). The sizing and other dimensions of the reactors were then done via calculations using British Standards and mechanical designs were produced through CAD modelling. 
+
 
 \section{Reactor Overview}
 Solution A Ltd\textquotesingle s modified solvay process involves 4 main processes with 5 reactors in total.  Limestone calcination process involves the limestone DSR calciner, R-1, where the limestone fed and decomposes into carbon dioxide and calcium oxide by the heat supplied by the combustion of natural gas. Sodium bicarbonate production process involves 2 reactors. Calcium oxide from R-1 is first sent to a slaker, R-3, where it reacts with water to produce a basic solution of calcium hydroxide. This solution is mixed with the brine feed and fed to a bubble column, R-4, to produce sodium bicarbonate. The sodium bicarbonate stream is then sent to sodium DSR calciner, R-5, where a thermal decomposition reaction takes place to produce carbon dioxide and the main product, soda ash. The flue gases produced from heating two DSRs are used in a carbon loop where the carbonator, R-2, is present. There carbon dioxide in the flue gas reacts with calcium oxide to produce the limestone stream which is recycled back to the limestone calciner, R-1.
@@ -8,7 +9,7 @@ Solution A Ltd\textquotesingle s modified solvay process involves 4 main process
 \begin{figure}[H]
     \centering
     \includegraphics[width=170mm]{Figures/Process_Overview2 (2).png}
-    \caption{Overview of the Solution A modified Solvay process.}
+    \caption{Overview of the Solution A's modified Solvay process.}
     \label{fig:GenOverview}
     
 \end{figure}
@@ -16,8 +17,9 @@ Solution A Ltd\textquotesingle s modified solvay process involves 4 main process
 \begin{table}[H]
 \centering
 \caption{Reactions modelled}
-\begin{tabular}{|c|c|c|}
+\begin{tabular}{ccc}
 \hline
+\rowcolor[HTML]{E7E6E6} 
 \textbf{Reaction} & \textbf{Reactor} &\textbf{Unit code} \\ \hline
 $CaCO_3 \rightarrow CaO + CO_2 $ & DSR Calciner &R-1 \\ \hline
 $CaO + CO_2 \rightarrow  CaCO_3 $     & Carbonator  & R-2  \\ \hline
@@ -28,12 +30,18 @@ $2NaHCO_3 \rightarrow  Na_2CO_3 + H_2O + CO_2$       & DSR Calciner&  R-5\\ \hli
 \label{tab:reactions}
 \end{table}
 
+\section{Challenges and Assumptions}
+% radiation
+% pressure drop
+% different parameters
+% 
 
 
 \section{Detailed Design of Reactor}
 \subsection{Choice of detailed reactor}
-As an objective, the solvay process has to be modified to reduce carbon emission by implementation of DSR (Direct Separation Reactor). Unlike the conventional limestone calcination process which uses kiln for the thermal decomposition of limestone, DSR is a newly developed reactor which can capture carbon dioxide very effectively. This is possible since DSR captures pure carbon dioxide released from the limestone by using indirect heating and separation of the exhaust gas from the pure carbon dioxide stream.\\
-With the objective of carbon emission reduction through DSR implementation, the limestone calcination reactor, R-1, is chosen to be designed in details amongst the five reactors for the following reasons. The limestone calcination has the greatest carbon foot print within the whole solvay process meaning it plays a crucial role in achieving the objective and it is the most suitable reactor for DSR to be implemented, designed and explored in details. Furthermore, the modelling of the reactor with solid and gas phases poses challenging mathematical problems where various equations and variables are involved. Solving these system of equations to size the reactor itself is very meaningful. 
+The Solvay process has to be modified to reduce carbon emission by implementation of DSR (Direct Separation Reactor). Unlike the conventional limestone calcination process which uses kiln for the thermal decomposition of limestone, DSR is a newly developed reactor which can capture carbon dioxide very effectively. This is possible since DSR captures pure carbon dioxide released from the limestone by using indirect heating and separation of the exhaust gas from the pure carbon dioxide stream.\\
+\newline
+With the objective of carbon emission reduction through DSR implementation, the limestone calcination reactor, R-1, is chosen to be designed in details amongst the five reactors for the following reasons. The limestone calcination has the greatest carbon foot print within the whole Solvay process meaning it plays a crucial role in achieving the objective and it is the most suitable reactor for DSR to be implemented, designed and explored in details. Furthermore, the modelling of the reactor with solid and gas phases poses challenging mathematical problems where various equations and variables are involved. Solving these system of equations to size the reactor itself is very meaningful. 
 
 
 \subsection{Reaction summary }
@@ -41,21 +49,29 @@ With the objective of carbon emission reduction through DSR implementation, the 
 \begin{center} 
 $CaCO_3 (s) \rightarrow CaO_(s) + CO_2(g) $
 \end{center}
-\noindent A thermal decomposition reaction of limestone, CaCO$_3$, occurs in the reactor, R-1. At the temperature above 840 \textdegree C limestone decomposes to produce solid CaO and CO$_2$ by heat resulting in the production two streams. At the top of the reactor a pure CO$_2$ gas stream is released and at the bottom a solid CaO powder stream is produced. The exhaust gas stream formed by the combustion of fuel is also released separately. There is no side reaction within the reactor, however, sintering of solid which is the fusion of solid particles into one solid mass, may occur. The detailed reaction kinetics and mechanism of the reaction are in the section ???.
+\noindent A thermal decomposition reaction of limestone, CaCO$_3$, occurs in the reactor, R-1. At the temperature above 840 \textdegree C limestone decomposes to produce solid CaO and CO$_2$ by heat resulting in the production two streams. At the top of the reactor a pure CO$_2$ gas stream is released and at the bottom a solid CaO powder stream is produced. The exhaust gas stream formed by the combustion of fuel is released separately. There is no side reaction within the reactor, however, sintering of solid which is the fusion of solid particles into one solid mass, may occur. The detailed reaction kinetics and mechanism of the reaction are highlighted in Section ???.
 
 \subsection{Reactor configuration}
-In industry, various types of calcination kilns such as shaft kiln, rotary kiln, the cyclone and the fluidised bed are being used with different mode of operation and vessel shapes \cite{https://www.sciencedirect.com/science/article/pii/S0038092X19312435}. For the configuration of limestone calcination DSR, various factors such as cost, safety, and performance were considered.\\
- \noindent After the comparison of batch and continuous modes of operation, the latter was chosen as it has higher productivity due to absence of breaks in time, good quality control and lower costs by reduced inventory and transport cost. Furthermore, the conventional kiln operates continuously, hence, it is reasonable for DSR to operates similarly.\\
- \noindent The reaction in DSR is a simple thermal decomposition without any need of catalyst, hence, an empty tubular vessel was chosen for the DSR as internal components are not needed. The tubular vessel for DSR should contain two compartments. The first compartment is the inner tube of DSR where the calcination of limestone takes place. The other compartment is the outer tube which surrounds the inner tube and the combustion of fuel takes place in it to produce indirect heating for the thermal decomposition of limestone in the first compartment. Due to this structure characteristic, it is possible to capture pure carbon dioxide stream from limestone without mixing it with the exhaust gas eventually reducing the total carbon emission.
+In industry, various types of calcination kilns such as shaft kiln, rotary kiln, the cyclone and the fluidised bed are being used with different mode of operation and vessel shapes \citep{https://www.sciencedirect.com/science/article/pii/S0038092X19312435}. For the configuration of limestone calcination DSR, various factors such as cost, safety, and performance were considered.\\
+\newline
+\noindent After the comparison of batch and continuous modes of operation, the latter was chosen as it has higher productivity due to absence of breaks in time, good quality control and lower costs by reduced inventory and transport cost. Furthermore, the conventional kiln operates continuously, hence, it is reasonable for DSR to operates similarly.\\
+\newline
+\noindent The reaction in DSR is a simple thermal decomposition without any need of catalyst, hence, an empty tubular vessel was chosen without internal components. The tubular vessel for DSR should contain two compartments. The first compartment is the inner tube of DSR where the calcination of limestone takes place. The other compartment is the outer tube which surrounds the inner tube and the combustion of fuel takes place to produce indirect heating for the thermal decomposition. Due to this structural characteristic, it is possible to capture pure carbon dioxide stream from limestone without mixing it with the exhaust gas, eventually reducing the total carbon emission.
  
  
 
-\subsection{Modelling objectives }
+\subsection{Modelling objectives}
+The model for the solid-gas phase tubular reactor was formulated with the following objectives:\\
 
+\begin{enumerate}
+    \item 
+    \item 
+    \item 
+\end{enumerate}
 
 
 \subsection{Modelling approach}
-
+The reactor was modelled as an radially dispersed plug flow reactor (RD-PFR) for solid and gas phases. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Reactor model}
@@ -65,25 +81,311 @@ In industry, various types of calcination kilns such as shaft kiln, rotary kiln,
 
 \subsubsection{Mass balance}
 
+The mass balance for the solid calcium carbonate is derived to give an Equation \ref{DSR} which uses the uniform conversion model to model the kinetics \citep{lemon}. This model assumes a uniform reaction front velocity, r, of the CaO/CaCO$_3$ interface which is multiplied by the available surface area which depends on the conversion of the reaction ($S'_0(1-x_{CaCO_3})V_{M,CaCO_3}$).
+
+\begin{equation}
+    r_{reaction}=\frac{dx_{CaCO_3}}{dV_R}=rS'_0(1-x_{CaCO_3})\frac{V_{M,CaCO_3}(1-\alpha)(1-\epsilon)}{n_{CaCO_3,0}V_{M,CaCO_3}}
+    \label{DSR}
+\end{equation}
+\\
+
+\begin{equation}
+n_p= \frac{6\;(1-\epsilon)}{\pi\;D_p^3}
+\end{equation}
+
+\begin{equation}
+S'_0=\rho_{CaCO_3}\;S_0\times10^{6}
+\end{equation}
+
+%\noindent r depends on a rate constant, adsorption constant and distance of CO$_2$ partial pressure from equilibrium which was $4.083\cdot10^{-7}ms^{-1}$.$V_{M,CaCO_3}$ is $0.0369 m^3kmol^{-1}$ and $S'_0$ is $3.25\cdot10^6 m^2m^{-3}$.\\
+
+\\
+
+\noindent The reaction velocity, r, is calculated using the equation below:
+
+\begin{equation}
+r = V_{M,CaCO_3}\;k\;(1-\theta)\;(1-\frac{P_{CO_2}}{P_{eq}})
+\end{equation}
+
+\begin{equation}
+k = k_0\;e^{\frac{-E_{a}}{R\;T_S}}
+\end{equation}
+
+\begin{equation}
+\theta = \frac{K\;P_{CO_2}}{1+(K\;P_{CO_2})}
+\end{equation}
+
+\begin{equation}
+K = K_0\;e^{\frac{-H_K}{R\;T_S}}
+\end{equation}
+
+
+\begin{equation}
+P_{eq}=10^{9.079-\frac{8308}{T_S}}
+\end{equation}
+
+\\
+\noindent Since the reaction is a simple reaction where 1 mole of calcium carbonate decomposes to produce the 1 mole of carbon dioxide and 1 mole of calcium oxide, the mass balances for calcium oxide and carbon dioxide are simply the amount of calcium carbonate reacted in the infinitely small volume of the reactor.
+$n_{in,CaCO_3}$ is the inital molar flowrate of CaCO$_3$, $\alpha$ is the porosity and $\epsilon$ is the void fraction.
+\noindent The assumptions that ???????????? were made to model the mass balance.
+\\
+
+
+
+\begin{table}[H]
+\centering
+\caption{parameters for mass balance}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Paramters} & {Description} & \textbf{Units} &\textbf{Values} \\ \hline
+E_a & Activation energy & kJ/mol & 210 \\ \hline
+k_0 & pre-exponential rate constant& & 18860\\ \hline
+H_K & Enthalpy big K ??? & kJ/mol & -101 \\ \hline
+K_0 & pre-exponential big K ???& & 1.38\times 10^{-6} \\ \hline
+R & ideal gas constant& J K^{−1} mol^{−1} & 8.314\\ \hline
+S_0 & Initial BET surface area & m^2m^{-3}& 1.2 \\ \hline
+n_{CaCO_3,0} & Initial molar flowrate of CaCO_3 & kmol/h ??? & 0.51087\\ \hline
+V_{M,CaCO_3} & Molar volume of CaCO_3 & m^3/kmol & 0.0369 \\ \hline
+\epsilon& voidage & - & 0.997\\ \hline
+
+\end{tabular}
+\label{tab:radipara}
+\end{table}
+
 
 
 \subsubsection{Energy balance}
 
+The energy balances for the solid calcium carbonate and gas phase carbon dioxide are derived as below:\\
+\begin{equation}
+\frac{dT_S}{dV_R}=\frac{n_p\;\pi\; d_p^2\;h\;(T_G-T_S)}{C_{P_S} \;n_{CaCO_3,0}}+\frac{a\;L_p\;q}{C_{P_S}\;n_{CaCO_3,0}}
+          -\frac{H_R\;r_{reaction}}{C_{P_S}};
+\end{equation}
+\\
+
+\begin{equation}
+\frac{dT_G}{dV_R}=-\frac{n_p\;\pi\; d_p^2\;h\;(T_S-T_G)}{C_{P_G} \;n_{CO_2,0}}+\frac{4\;U\;(T_{tube}-T_G)}{D_{tube}\;C_{P_G}\;n_{CO_2,0}}
+\end{equation}
+\\
+where the number of particles, n_p is expressed as below:
+\begin{equation}
+n_p= \frac{6\;(1-\epsilon)}{\pi\;D_p^3}
+\end{equation}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent The temperature of solid particle in the DSR depends on the heat transfer by convection, heat transfer by radiation and heat used up by endothermic thermal decomposition reaction. While the temperature of gas depends on the heat transfer by convection and heat transfer from the wall of the tube. \\
+
+\noindent The radiation flux, q is calculated as below \citep{Atlas}:\\
+
+\begin{equation}
+  q = \frac{\epsilon_w}{\alpha_{g+p} + \epsilon_w - \alpha_{g+p}\;\epsilon_w }\sigma\;[\alpha_{g+p}\;T_G^4-\alpha_{g+p}\;T_{tube}^4]
+\end{equation}
+\\
+\noindent The total absorptance of the gas–solid mixture can be described as following:
+\begin{equation}
+\alpha_{g+p} = (1-\beta)\frac{1-e^{-\phi_{abs,g+p}}}{1+\beta\;e^{-\phi_{abs,g+p}}}
+\end{equation}
+\\
+
+\noindent The total emissivity of the gas–solid mixture can be described as following:
+\begin{equation}
+\epsilon_{g+p} = (1-\beta)\frac{1-e^{-\phi_{emi,g+p}}}{1+\beta\;e^{-\phi_{emi,g+p}}}
+\end{equation}
+\\
+
+\noindent The optical thickness for absorption is calculated as following:
+\begin{equation}
+\phi_{abs,g+p} =Q_{abs}\;a\;L_p + K_{abs,g}\;l_{mb}\;\gamma
+\end{equation}
+\\
+\noindent The optical thickness for the gas–solid mixture is calculated as following:
+\begin{equation}
+\phi_{emi,g+p} =Q_{abs}\;a\;L_p + K_{emi,g}\;l_{mb}\;\gamma
+\end{equation}
+\\
+
+\noindent The auxiliary terms are expressed as below: 
+\begin{equation}
+\gamma = \left(\frac{1}{\frac{2Q_{bsc}}{Q_{abs}}}\right)^{1/2}
+\end{equation}
+
+\begin{equation}
+\beta = \frac{\gamma-1}{\gamma+1}
+\end{equation}
+
+\noindent Specific surface area of the calcium carbonate particles are as following:
+\begin{equation}
+a=\frac{3}{2\;D_p^2\; \rho_{CaCO_3}}
+\end{equation}
+
+
+\noindent Particle loading calculated with the equation below where $\epsilon$ is a void fraction and $\phi$ is the porosity:
+
+\begin{equation}
+L_p=n_{CaCO_3,0}\; M_w_{CaCO_3}\;\frac{(1-\epsilon)(1-\phi)}{n_{CaCO_3,0}\; V_M_{CaCO_3}}
+\end{equation}
+
+\noindent The mean beam length:
+\begin{equation}
+l_{mb}=0.76\times D
+\end{equation}
+
+
+\noindent absorption coefficient:
+\begin{equation}
+K_{abs,g}= -\frac{ln(1-A_v)}{l_{mb}}
+\end{equation}
+
+\noindent emission coefficient:
+\begin{equation}
+K_{emi,g}= -\frac{ln(1-\epsilon_{g})}{l_{mb}}
+\end{equation}
+
+
+\noindent Absorptance is calculated with the equation below:
+\begin{equation}
+A_v=\left(\frac{T_G}{T_{tube}}\right)^{0.65}\times\epsilon_{g}
+\end{equation}
+
+
+
+%\begin{equation}
+%\epsilon_{g}=0.135
+%\end{equation}
+
+\begin{table}[H]
+\centering
+\caption{parameters for radiation flux calculation}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Paramters} & {Description} & \textbf{Units} &\textbf{Values} \\ \hline
+\sigma & & & 5.67\times10^{-8}\\ \hline
+\epsilon_w& wall emissivity& - & 0.88\\ \hline
+Q_{abs}& mean relative efficiencies for absorption & - & 0.35 \\ \hline
+Q_{bsc}&mean relative efficiencies for backscattering & - & 0.395 \\ \hline
+\epsilon_{g}& CO$_2$ emissivity & - & 0.135\\ \hline
+\rho_{CaCO_3} & Density of CaCO_3 & g/cm^3 & 2.71 \\ \hline
+D_p & Particle diameter& m & 50\times10^{-6}\\ \hline
+\epsilon& voidage & - & 0.997\\ \hline
+\phi& porosity& - & 0.0043\\ \hline
+n_{CaCO_3,0} & Initial molar flowrate of CaCO_3 & kmol/h ??? & 0.51087\\ \hline
+n_{CO_2,0} & Initial molar flowrate of CO_2 & kmol/h ??? & 0.4598\\ \hline
+\end{tabular}
+\label{tab:radipara}
+\end{table}
+
+
+
+\noindent The heat transfer coefficients, U, is calculated as below:
+
+\begin{equation}
+\frac{1}{U}=\frac{1}{h_i\;S_i}+\frac{ln(\frac{r_0}{r_i})}{\pi\;r\;l\;\lambda}+\frac{1}{h_0\;S_0}
+\end{equation}
+\\
+
+\noindent The infinitely small inner surface area of the DSR is:
+\begin{equation}
+S_i=\pi D
+\end{equation}
+
+
+\noindent The infinitely small outer surface area of the DSR is following where, l, denotes the thickness of the wall:
+\begin{equation}
+S_0=\pi (D+2\;l)
+\end{equation}
+
+
+
+\noindent The heat transfer coefficient by convection of gas is following:
+\begin{equation}
+h=J_H\; C_{p_G}\;G_G\left(\frac{0.043}{P_r}\right)^{2/3}
+\end{equation}
+
+\noindent Gas flux in the DSR is following:
+\begin{equation}
+G_G=\frac{n_{CO_2,0}\;(1-x_{CaCO_3})}{A_{tube}}
+\end{equation}
+
+\begin{equation}
+G_S=\frac{n_{CaCO_3,0}}{A_{tube}}
+\end{equation}
+\\
+
+\noindent J$_H$ is calculated as below using the ??????? correlation.
+\begin{equation}
+J_H=0.043\;\left(\frac{9.81\;D_p}{U_G}\right)^2\;\left(\frac{(\rho_{CaCO_3}-\rho_{CO_2})(1-\epsilon)^2}{\rho_{CO_2}}\right)^{0.25}
+\end{equation}
+\\
+
+\noindent Prandtl number, P$_r$, is calculated as below:
+\begin{equation}
+ P_r = \frac{C_{p_G}\;\mu}{\lambda}
+\end{equation}
+
+\noindent The heat conductivity of the fluid, $\lambda$, is found with the correlation equation below. The equation was obtained from the experimental data from the Engineering Toolbox.com 
+\begin{equation}
+\lambda=((-10^{-5}\times T_G^2)+(0.0906\times T_G)-9.1476)\times10^{-3}
+\end{equation}
+
+\noindent The viscosity of the fluid, carbon dioxide is calculated using the Sutherland's equation below where the temperature is in the units of Rankine degree:
+\begin{equation}
+\mu=\mu_0\left(\frac{a}{b}\right)\left[\frac{T_G}{T_{G_0}}\right]^{3/2}
+\end{equation}
+
+\noindent At the standard temperature, T$_{G_0}$ = 527.67 R, the viscosity $\mu_0$ is 0.0148. The expression for a and b are following:
+\begin{equation}
+a=0.555\;T_{G_0} + 240
+\end{equation}
+
+\begin{equation}
+b=0.555\;T_{G} + 240
+\end{equation}
+
+\noindent The specific heat capacity of the gas in the DSR, $C_{p_G}$, is calculated as below :
+\begin{equation}
+C_{p_G}=22.243+(5.977\times10^{-2)})\;T_G+(-3.499\times10^{-5})\;T_G^2+(7.464\times10^{-9})\;T_G^3
+\end{equation}
+
+\begin{table}[H]
+\centering
+\caption{parameters for heat trasfer coefficient calculation}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Paramters} & {Description} & \textbf{Units} &\textbf{Values} \\ \hline
+l & thickness of the wall& m & 0.08\\ \hline
+%h & heat transfer coefficient of the wall& W/m^2K & 100\\ \hline
+
+
+\end{tabular}
+\label{tab:radipara}
+\end{table}
+
+
+
 \subsection{Kinetic estimation }
+It proved difficult to find congruous apparent activation energy results amongst the available literature. One review found values varying from 91.7 kJmol$^{-1}$ to 205kJmol$^{-1}$ \citep{mohamreview} which would lead to drastically different reactor sizes. Given the kinetics of limestone depend on many different factors, it was deemed inappropriate to used an activation energy that is highly variable, depending on the type of limestone used in the experiment. Instead, mechanisms that account for the structural properties of the limestone were investigated. Amongst the Changing Grain Model, Random Pore Model and Uniform Conversion model, the Random Pore Model and Uniform Conversion Model fit the experimental data best. The Uniform Conversion Model was chosen given it had less parameters that need to be estimated which would lead to increased sources of error. In addition, the Uniform Conversion Model was validated on a pilot-scale reactor. The model proposes that the rate of decomposition is proportional to the available BET surface area for reaction. As such the rate of reaction is described by Eq.\ref{ucm}. Where r is the reaction front velocity (ms^{-1}) and S'${_0}$ is the surface area per unit volume of CaCO${_3}$ (m^2m^{-3}.
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{equation}
+\frac{dCaCO_3}{dt}=rS'_0CaCO_3
+ \label{ucm}   
+\end{equation}
+
 \subsection{Parameter estimation }
 
 
 
-\subsubsection{Axial dispersion coefficient}
+\subsubsection{Dispersion coefficient}
+According to the rule of thumb, the effect of axial dispersion was neglected as the following condition is satisfied where L and d$_p$ represents the reactor length and particle diameter.:\\
+\begin{equation} 
+L>50 d_p
+\end{equation}
+Since the diameter of limestone particle is 50 micrometer, axial dispersion was neglected and only radial dispersion was investigated.\\
 
 
-\subsubsection{Voidage }
+\subsubsection{Voidage}
 
 
 \subsubsection{Gas equilibrium }
@@ -160,26 +462,135 @@ In industry, various types of calcination kilns such as shaft kiln, rotary kiln,
 
 
 \subsection{Design rationale}
+% Describe the reactor and purpose of stuff
+The proposed plant for the manufacture of soda ash hinges on the implementation of a DSR, the design of which allows for the separation between flue gases from the combustion of natural gas and the calcination reactants and products. The reactor is split into two chambers via a vertical inner cylinder that spans the whole height of the vessel. The inner cylinder has a large flange at the top, where a solid feeder delivers ground $CaCO_3$ into the column and pure $CO_2$ gas is allowed to escape following the calcination reaction. At the bottom an identical flange is used to remove reacted $CaO$. The outer chamber houses the 12 burners required to maintain extremely high inner wall temperature and sustain the endothermic reaction. A fuel and air mixture flows through the burner nozzles and is ignited. Flue gases exit from 6 large flanges at the top of the reactor and are delivered to the carbonator unit downstream. The outer vessel is supported by a skirt.
 
 
 \subsection{Reactor material}
+% reactor withstands p,t and this steel was selected at these operating conditions
+Although both vessels are not under high pressures, the main challenge of achieving a mechanically-viable vessel come from the very high temperatures required for the reaction. Strengths and stresses each steel alloy can withstand are dramatically decreased at high temperatures. The inner cylinder of the reactor has an average temperature of 967\textdegree C, and has a maximum pressure of approximately $121 kPa$ at the bottom of the reactor. The materials presented in BS-5500:1997 were unsatisfactory since they had not been tested at high enough temperatures, therefore an alternative steel alloy was found and used. Alloy 617 \citep{Alloy617} was identified as a suitable high-nickel alloy with great strength at high temperatures. A 0.2\% yield strength value of $109 MPa$ at 1200 \textdegree C was selected such that a safety margin was included since the reactor will be at high temperatures for long periods of time. Additionally, design pressure $P_D = 1 barg$ was selected to ensure safe operation of the outer shell as well.
 
 
-\subsection{Reactor dimension}
+
+\subsection{Vessel sizing}
+%subsubsections
+% shell, end for inner and outer cylinder
+\begin{equation}
+    e_{min} = \frac{P_D D_i}{2f-P_D}
+    \label{ecylinder}
+\end{equation}
+\begin{table}[H]
+\centering
+\begin{tabular}{lll}
+\centering
+
+\rowcolor[HTML]{E7E6E6} 
+\textbf{Chamber} & \textbf{$e_{min}$ - mm} & \textbf{$e_{cyl}$ - mm} \\ \hline
+Calciner         & 40.11         & 42.11                                                      \\ \hline
+Flue Gas         & 80.33                                                             & 82.33                                                       \\ \hline
+\end{tabular}
+\label{cylinder thicknesses}
+\end{table}
+\noindent The inner diameter of the calcination chamber, equal to $4.37m$, was dictated by the minimum fluidisation properties of the loaded powder. Equation \ref{ecylinder} was used to calculate a minimum thickness for the inner and outer shells of the DSR. The outer shell diameter was calculated by including burner-wall clearances outlined in BS-13705:2012 and a nozzle length, described in Section ???. A corrosion allowance was added to each minimum thickness, summarised in Table \ref{cylinder thickness}.
+
+\noindent Two ellipsoidal ends were sized for the outer cylinder, following the method outlined in Section 3.5.2 in BS 5500:1997. For the given $P/f$ parameter, a thickness $e = 7mm$ and height $h = 2189mm$ were calculated. However, the end thickness was extended to be equal to $e_{cyl}$, allowing for easier welding between the pieces. The inner chamber wall is extended such that it makes contact with the end and delineates the two chambers.
+
+\begin{equation}
+    t_s = \frac{M_h}{R_o ^2 \pi f E} + \frac{W'}{D_o \pi f E}= 19.92mm
+    \label{skirt thickness}
+\end{equation}
+
+Since a vertical orientation is required for correct operation, a skirt support was also designed, attached to the vessel outer diameter. The method found \citep{megyesy} uses Eq. \ref{skirt thickness} to calculate the required thickness of the skirt. The hydraulic test weight and lateral forces acting on the vessel were considered, and a butt weld construction was opted for, due to its high joint efficiency. The calculated value was rounded up to $t_s = 20mm$. Skirt height was selected to be $2m$ to allow for the installation of equipment for solid transport, along with allowing access for manned inspections.
 
 
 \subsection{Port and flanges}
+%subsubsections
+%describe each flange, positioning etc
+
+The calcination chamber requires two large class 150? PN2.5 weld neck flanges for operation, positioned axially at either end. The top flange allows for solid to be loaded into the reactor, whilst simultaneously allowing for a flow of $CO_2$ in the opposite direction. Since the volume and pressure of the gas are low enough to allow for cross-flow between the two phases, a single opening is required and as such can be almost as wide as the chamber itself. At the bottom, an identical flange is used for the outlet $CaO$. During operation, an accumulation of solid at the bottom of the reactor would fill and plug the flange. The outer chamber instead has 12 burner nozzles connected to an external burner and feed of fuel and air. At the top of the chamber, 6 large flanges were placed to extract the large volume of flue gas being produced by the burner's combustion.
+\noindent Multiple pressure-relief valve are positioned at the top of the outer chamber, sized with a bursting disk and a relief pressure of 1.3 bar. Two small openings for thermocouple insertion were provided, such that the inner cylinder wall temperature could be monitored. A manhole was also positioned to allow for inspection of the outer chamber, although inspection of the inner chamber is rather challenging. Each opening was positioned following the pressure area method. 
+
+\subsection{Burner units}
+%describe burner setup
+To maintain the extremely high temperature at the inner chamber wall, 12 burner units Riello RS 1200/M \citep{rielloburner} units were included in the design of the vessel. These burners were chosen for several reasons. Firstly, they have a very high heat output of 12MW each. Additionally, the fuel can be injected from outside of the vessel, making the mechanical design of the chambers much easier and less risky, since the fuel does not travel inside the hot vessel. Lastly, each burner can be programmed, giving the operator advanced possibilities of process control and safety measures. The majority of the burners are found in the top half of the vessel since the reaction velocity is much higher and as such requires a higher heat duty. The diameter of the outer chamber was calculated by combining the nozzle length, described in \citep{rielloburner} and burner-wall clearances given in Table 14 of BS EN ISO 13705:2012. Further investigation of heat diffusion in the chamber should be carried out to ensure correct operation of the burners and reactor.
 
 
 
-\subsection{Heating tube}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Design of Non-detailed reactors}
+\subsection{R-2}
+
+\subsection{R-3: Slaker unit}
+
+A fraction of produced $CaO$ is routed to the slaker unit, designed to dissolve the powder into brine and form an aqueous solution of $Ca(OH)_2$. Due to the poor solubility exhibited by the compound and considerations on R-4 unit operation discussed in Section \ref{R4bubco}, it has been assumed that the available $Ca(OH)_2$ only reaches saturation at R-4's liquid outlet (insert stream number), and is partly dissolved at all points upstream. The water loading required to reach complete solubility of $Ca(OH)_2$ was calculated to be extremely high, and complete dissolution of $Ca(OH)_2$ was deemed unfeasible.
+\\
+
+\noindent Assumptions used to model sodium bicarbonate slaker unit are the following:
+\begin{enumerate}
+  \item The reactor was modelled as a CSTR.
+  \item The reactor was assumed to be isothermal and isobaric.
+  \item The specific heat capacity was assumed to be constant for heat duty calculation.
+  \item The volumetric flow rate was assumed to be constant.
+  \item $Ca(OH)_2$ is oversaturated, present in solution and as a solid.
+\end{enumerate}
+ 
+ \begin{equation}
+     V_R = \frac{v_T}{k_d} \times x_{CaO}
+     \label{eq: CSTR}
+ \end{equation}
+ 
+\noindent The slaker unit R-3 was sized according to Eq.\ref{eq: CSTR}, with a target conversion $x_{CaO} = 0.99$. The rate law followed first order kinetics, with a measured (REF) kinetic constant $k_d = 4.8\times10^{-3} s^{-1}$ at 25 \textdegree C. Calculated reactor volume measured $V_R = 48.7 m^3$. 
+
+\subsection{R-4: Bubble column}
+\label{R4bubcol}
+
+\subsection{R-5: Sodium bicarbonate DSR Calciner}
+
+Assumptions used to model sodium bicarbonate DSR calciner are the following:
+\begin{enumerate}
+  \item The reactor was modelled as a PFR.
+  \item The reactor was assumed to be isothermal and isobaric.
+  \item The specific heat capacity was assumed to be constant for heat duty calculation.
+  \item The volumetric flow rate was assumed to be constant.
+\end{enumerate}
+
+\begin{equation}
+    ln(1-x_{NaHCO_3})=-k_{d}\times t
+\end{equation} 
+
+\begin{equation}
+    k_{d}=k_{0}\times e^{\frac{-E}{RT}}
+\end{equation} 
+
+\noindent For the sizing of the reactor, the kinetic constant of $k_0$=1.43\times $10^{11}$ s$^{-1}$ and activation energy of $E$=102 kJ/mol, from  literature were used to calculate The rate constant k$_d$ is $0.0295s^{-1}$ at 147\textdegree C. The thermal decomposition of sodium bicarbonate was assumed to be a first order reaction as was suggested by Wang Hu et al. \citep{Hu}. The assumption of void fraction, $\epsilon$, being 0.9 and replacement of volumetric flow rate, v as in the Equation \ref{flow} are used to integrated to Equation \ref{nahc} to from the Equation \ref{nahc2}:
+
+
+ \begin{equation}
+    \frac{dx_{NaHCO_3}}{dV_R} =(1-x_{NaHCO_3})\frac{(1-\epsilon)}{v}k_{d}
+    \label{nahc}
+\end{equation}
+
+\begin{equation}
+    v=n_{NaHCO_30}\times{\rho_{NaHCO_3}+x_{NaHCO_3}\times(0.5\times\rho_{Na_2CO_3}-\rho_{NaHCO_3})}
+        \label{flow}
+\end{equation}
+
+
+ \begin{equation}
+    V_R = \frac{n_{NaHCO_3}}{k_{d}(1-\epsilon)}\times\left[-bx-(b+a)ln(|x-1|)\right]_0^{0.999}
+    \label{nahc2}
+\end{equation}
+
+\begin{equation}
+    a = \frac{\rho_{NaHCO_3}}{Mr_{NaHCO_3}}
+\end{equation}
 
 
 
+\begin{equation}
+    b = 0.5\times\frac{\rho_{Na_2CO_3}}{Mr_{Na_2CO_3}}-\frac{\rho_{NaHCO_3}}{Mr_{NaHCO_3}}
+\end{equation}
+
+The calculated volume is V$_R$=32.7 m$^3$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 

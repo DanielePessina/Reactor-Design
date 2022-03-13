@@ -1,12 +1,23 @@
-\documentclass[a4paper, twoside, 12pt]{article}
+\documentclass[a4paper, twoside, 12pt, table]{article}
 
 %% Language and font encodings
 \usepackage[english]{babel}
 \usepackage[utf8x]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage{helvet}
-\renewcommand{\familydefault}{\sfdefault}
+%\usepackage{helvet}
+%\renewcommand{\familydefault}{\sfdefault}
 \usepackage{natbib} 
+
+% fonts
+\usepackage{fontspec}
+\defaultfontfeatures{Mapping=tex-text}
+
+\setmainfont
+[Path=./A_fonts/, BoldFont=calibrib.ttf,
+ItalicFont=calibrii.ttf,
+BoldItalicFont=calibriz.ttf]
+{calibri.ttf}
+\newfontfamily\headingfont[Path=./A_fonts/, ItalicFont=calibrili.ttf]{calibril.ttf}
 
 
 %% Sets page size and margins
@@ -24,14 +35,24 @@
 \graphicspath{ {./Figures/} }
 \usepackage{float}
 \usepackage{adjustbox}
+\usepackage{pdflscape}
 
-
+\setlength {\marginparwidth}{2cm}
 \usepackage[colorinlistoftodos]{todonotes}
 \usepackage[colorlinks=true, allcolors=blue]{hyperref}
 \usepackage{tabularx}
 \usepackage{pdfpages}
+\usepackage{wrapfig}
+\usepackage{threeparttable}
+\usepackage{caption}
+\captionsetup{font=footnotesize, textfont=it, labelfont={it,bf}}
 
-%\usepackage[table,xcdraw]{xcolor}
+\usepackage{lscape}
+\usepackage{multirow}
+%\usepackage[paper=portrait,pagesize]{typearea}
+\usepackage{rotating}
+\usepackage{longtable}
+\usepackage[normalem]{ulem}
 
 %Sart of the document 
 \begin{document}
